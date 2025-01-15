@@ -32,11 +32,7 @@ using namespace util::hex_literals;
 // initializer lists.
 // A fix may be on the way:
 // https://developercommunity.visualstudio.com/t/consteval-conversion-function-fails/1579014
-#if defined(_MSC_VER)
-auto consteval_ctor(auto&& input) { return input; }
-#else
 #define consteval_ctor(input) (input)
-#endif
 
 static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
