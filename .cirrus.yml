@@ -177,15 +177,6 @@ task:
     FILE_ENV: "./ci/test/00_setup_env_native_msan.sh"
 
 task:
-  name: 'fuzzer,address,undefined,integer, no depends'
-  << : *GLOBAL_TASK_TEMPLATE
-  persistent_worker:
-    labels:
-      type: medium
-  env:
-    FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
-
-task:
   name: 'multiprocess, i686, DEBUG'
   << : *GLOBAL_TASK_TEMPLATE
   persistent_worker:
