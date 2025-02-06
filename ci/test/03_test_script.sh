@@ -63,6 +63,8 @@ if [ "$RUN_FUZZ_TESTS" = "true" ]; then
   fi
   (
     cd "${DIR_QA_ASSETS}"
+    git fetch origin --depth=1 107f00230b03630ad8c9b97d68f8cae80bd50510
+    git checkout 107f00230b03630ad8c9b97d68f8cae80bd50510
     echo "Using qa-assets repo from commit ..."
     git log -1
   )
